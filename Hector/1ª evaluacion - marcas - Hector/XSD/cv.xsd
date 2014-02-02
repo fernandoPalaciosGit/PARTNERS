@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://europass.com/cv.xml" xmlns:epcv="http://europass.com/cv.xml"
+	elementFormDefault="qualified">
+
+
+	<xsd:include schemaLocation="grupos_sustitucion.xsd" />
+	<xsd:include schemaLocation="tipos_complejos.xsd" />
+	<xsd:include schemaLocation="tipos_simples.xsd" />
+
+
+	<xsd:element name="cv">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="info_personal" type="epcv:info_ampliada"
+					maxOccurs="1" />
+				<xsd:element name="experiencia" type="epcv:info_experiencia"
+					maxOccurs="1" />
+				<xsd:element name="formacion" type="epcv:info_formacion"
+					maxOccurs="1" />
+				<xsd:element name="capacidades" type="epcv:info_capacidades"
+					maxOccurs="1" />
+					<xsd:element name="adicional" type="epcv:abstract"
+					maxOccurs="1" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

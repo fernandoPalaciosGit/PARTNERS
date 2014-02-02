@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  No es posible editar el contenido de este fichero  -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.w3c.org/autoria"
+	xmlns="http://www.w3c.org/autoria"
+	elementFormDefault="unqualified">
+	
+	<xsd:complexType name="autor">
+		    <xsd:sequence>
+				<xsd:element name="nombre" type="xsd:string"/>
+				<xsd:element name="apellidos" type="xsd:string"/>
+			</xsd:sequence>	
+	</xsd:complexType>
+	
+</xsd:schema>

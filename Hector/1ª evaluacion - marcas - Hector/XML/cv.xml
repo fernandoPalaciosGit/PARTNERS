@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epcv:cv xmlns:epcv="http://europass.com/cv.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://europass.com/cv.xml ../XSD/cv.xsd">
+
+	<epcv:info_personal>
+		<nombre>Francisca</nombre>				<!-- IMPORTADO DE AUDITORIA -->
+		<apellidos>Segura López</apellidos>		<!-- IMPORTADO DE AUDITORIA -->
+
+		<epcv:direccion>
+			<epcv:tipo>Plaza</epcv:tipo>
+			<epcv:nombre>Constitución</epcv:nombre>
+			<epcv:numero>400</epcv:numero>
+			<epcv:piso>3</epcv:piso>
+			<epcv:cp>E-50008</epcv:cp>
+			<epcv:localidad>Zaragoza</epcv:localidad>
+		</epcv:direccion>
+
+		<epcv:contacto>
+			<epcv:c_telefono>
+				<epcv:ct_tipo>Teléfono</epcv:ct_tipo>
+				<epcv:ct_prefijo>34-1</epcv:ct_prefijo>
+				<epcv:ct_numero>976232323</epcv:ct_numero>
+			</epcv:c_telefono>
+		</epcv:contacto>
+
+		<epcv:contacto>
+			<epcv:c_telefono>
+				<epcv:ct_tipo>FAX</epcv:ct_tipo>
+				<epcv:ct_prefijo>34-1</epcv:ct_prefijo>
+				<epcv:ct_numero>976232323</epcv:ct_numero>
+			</epcv:c_telefono>
+		</epcv:contacto>
+		<epcv:email>segura@pop.es</epcv:email>
+		<epcv:nacionalidad>Española</epcv:nacionalidad>
+
+		<epcv:nacimiento>
+			<epcv:dia>12</epcv:dia>
+			<epcv:mes>11</epcv:mes>
+			<epcv:anyo>1971</epcv:anyo>
+		</epcv:nacimiento>
+
+		<epcv:sexo>Mujer</epcv:sexo>
+
+		<epcv:empleo_deseado>Contable</epcv:empleo_deseado>
+
+	</epcv:info_personal>
+
+	<epcv:experiencia>				
+			<epcv:desde>			<!-- FECHAS REUTILIZABLE!!! -->
+				<epcv:dia>12</epcv:dia>
+				<epcv:mes>11</epcv:mes>
+				<epcv:anyo>1971</epcv:anyo>
+			</epcv:desde>
+			<epcv:hasta>
+				<epcv:dia>12</epcv:dia>
+				<epcv:mes>11</epcv:mes>
+				<epcv:anyo>1971</epcv:anyo>
+			</epcv:hasta>
+								<!-- FIN FECHAS -->
+		<epcv:e_puesto>Contable</epcv:e_puesto>
+		<epcv:e_tarea>Gestión de cuentas, balances, análisis</epcv:e_tarea>
+		<epcv:e_empresa>Empresa Asesores Fiscales y Auditores reunidos</epcv:e_empresa>
+		<epcv:ee_direccion>							<!-- DIRECCION REUTILIZABLE!!! -->
+			<epcv:tipo>Calle</epcv:tipo>
+			<epcv:nombre>de los Pirineos</epcv:nombre>
+			<epcv:numero>53</epcv:numero>
+			<!-- <epcv:ee_piso>3</epcv:ee_piso> <epcv:ee_cp>E-50008</epcv:ee_cp> -->
+			<epcv:localidad>Huesca</epcv:localidad>
+		</epcv:ee_direccion>							<!-- FIN DIRECCION REUTILIZABLE!!! -->
+	</epcv:experiencia>
+
+	<epcv:formacion>								<!-- FECHAS REUTILIZABLE!!! -->
+			<epcv:desde>
+				<epcv:mes>10</epcv:mes>
+			</epcv:desde>
+			<epcv:hasta>
+				<epcv:mes>12</epcv:mes>
+				<epcv:anyo>1971</epcv:anyo>
+			</epcv:hasta>							<!-- FIN FECHAS REUTILIZABLE!!! -->
+
+		<epcv:f_tipo>Curso de Contabilidad Informatizada “Express”</epcv:f_tipo>
+		<epcv:f_centro>
+			<epcv:fc_nombre>Centro de Formación de Adultos para Aplicaciones
+				Informáticas.</epcv:fc_nombre>
+			<epcv:fc_localidad>Huesca</epcv:fc_localidad><!-- LOCALIDAD REUTILIZABLE!!! -->
+			<epcv:fc_tipo>Centro de Formación Ocupacional Homologado por el INEM</epcv:fc_tipo>
+		</epcv:f_centro>
+	</epcv:formacion>
+
+	<epcv:capacidades>
+		<epcv:c_materna>Español</epcv:c_materna>
+		<epcv:c_lenguas>
+			<epcv:cl_lengua>Inglés</epcv:cl_lengua>
+			<epcv:cl_comprender>
+				<epcv:clc_auditiva>C1</epcv:clc_auditiva>
+				<epcv:clc_lectura>C2</epcv:clc_lectura>
+			</epcv:cl_comprender>
+			<epcv:cl_hablar>
+				<epcv:clh_interaccion>C2</epcv:clh_interaccion>
+				<epcv:clh_expresion>C1</epcv:clh_expresion>
+			</epcv:cl_hablar>
+			<epcv:cl_escribir>B2</epcv:cl_escribir>
+		</epcv:c_lenguas>
+		
+		<epcv:c_competencias>
+			<epcv:cc_sociales>Las capacidades de comunicación se han adquirido
+				ejerciendo la labor docente descrita. Las
+				capacidades de organización, trabajo en equipo, concentración, en las prácticas
+				en empresa y en la
+				experiencia laboral más arriba reseñada.</epcv:cc_sociales>
+			<epcv:cc_organizativas>Buenas dotes de comunicación y organización</epcv:cc_organizativas>
+			<epcv:cc_organizativas>Disponibilidad para viajar</epcv:cc_organizativas> <!-- SE REPITE!!!! -->
+			<epcv:cc_informaticas>Buen manejo de ordenadores, tanto en
+				aplicaciones contables, como base de datos y tratamiento
+				de textos. Internet, correo electrónico.</epcv:cc_informaticas>
+			<epcv:c_conduce>B1</epcv:c_conduce>											<!-- OPCIONAL!!! -->
+		</epcv:c_competencias>
+	</epcv:capacidades>
+	
+	<epcv:adicional>
+		<epcv:nombre>D. Ildefonso Sánchez Baturro</epcv:nombre>
+		<epcv:empresa>Director de la Academia de Contabilidad El Balance</epcv:empresa>
+		<epcv:direccion>
+			<epcv:tipo>Calle</epcv:tipo>
+			<epcv:nombre>del Coscorrón</epcv:nombre>
+			<epcv:numero>34</epcv:numero>
+			<epcv:localidad>Zaragoza</epcv:localidad>
+		</epcv:direccion>
+	</epcv:adicional>
+
+</epcv:cv>

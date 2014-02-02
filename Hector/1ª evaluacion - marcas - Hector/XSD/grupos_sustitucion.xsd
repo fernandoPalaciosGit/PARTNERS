@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://europass.com/cv.xml" xmlns:epcv="http://europass.com/cv.xml" 
+	xmlns:info="http://www.europass.eu/info_adicionalCV"
+	elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="cv.xsd" />
+	<xsd:import namespace="http://www.europass.eu/info_adicionalCV" schemaLocation="../xsd_gelpi/info_adicional.xsd" />
+
+	<xsd:element name="year_gral" type="epcv:year" />
+	<xsd:element name="anyo" type="epcv:year"
+		substitutionGroup="epcv:year_gral" />
+
+	<xsd:element name="month_gral" type="epcv:month" />
+	<xsd:element name="mes" type="epcv:month"
+		substitutionGroup="epcv:month_gral" />
+
+	<xsd:element name="day_gral" type="epcv:day" />
+	<xsd:element name="dia" type="epcv:day" substitutionGroup="epcv:day_gral" />
+
+	<xsd:element name="date" type="epcv:date_gral" />
+	<xsd:element name="nacimiento" type="epcv:date_gral"
+		substitutionGroup="epcv:date" />
+	<xsd:element name="desde" type="epcv:date_gral"
+		substitutionGroup="epcv:date" />
+	<xsd:element name="hasta" type="epcv:date_gral"
+		substitutionGroup="epcv:date" />
+
+
+</xsd:schema>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://europass.com/cv.xml" xmlns:epcv="http://europass.com/cv.xml"
+	elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="cv.xsd" />
+
+	<!-- Tipo de contacto para el teléfono -->
+	<xsd:simpleType name="telfs_permitidas">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Teléfono" />
+			<xsd:enumeration value="Móvil" />
+			<xsd:enumeration value="FAX" />
+			<xsd:enumeration value="Busca" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Patrón para el prefijo -->
+	<xsd:simpleType name="prefijos">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9][0-9][-][0-9]"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Patrón para el teléfono -->
+	<xsd:simpleType name="telefonos">
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[0-9]{9}"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Restricciones para el tipo de vía en la dirección -->
+	<xsd:simpleType name="vias_permitidas">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Plaza" />
+			<xsd:enumeration value="Calle" />
+			<xsd:enumeration value="Carretera" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Restricciones para el nivel de lenguas -->
+	<xsd:simpleType name="niveles_permitidos">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A1" />
+			<xsd:enumeration value="A2" />
+			<xsd:enumeration value="A3" />
+			<xsd:enumeration value="B1" />
+			<xsd:enumeration value="B2" />
+			<xsd:enumeration value="B3" />
+			<xsd:enumeration value="C1" />
+			<xsd:enumeration value="C2" />
+			<xsd:enumeration value="C3" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Máximo hasta el número 1500 -->
+	<xsd:simpleType name="max1500">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="1" />
+			<xsd:maxInclusive value="1500" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Patrón para el Código Postal Letra(Pais),Guión y 5 Números(código) -->
+	<xsd:simpleType name="codigo_postal">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][-][0-9]{5}"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Restricción para el valor de los días -->
+	<xsd:simpleType name="day">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="1" />
+			<xsd:maxInclusive value="31" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Restricción para el valor de los meses -->
+	<xsd:simpleType name="month">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="1" />
+			<xsd:maxInclusive value="12" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Restricción para el valor de los años -->
+	<xsd:simpleType name="year">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="1900" />
+			<xsd:maxInclusive value="2050" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

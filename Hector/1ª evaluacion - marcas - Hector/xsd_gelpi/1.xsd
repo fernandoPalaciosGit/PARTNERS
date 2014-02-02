@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  Sólo es posible editar en este archivo aquellos elementos/tipos que se indiquen
+	  de manera explícita en los comentarios incluidos  -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.europass.eu/info_adicionalCV"
+	xmlns:info="http://www.europass.eu/info_adicionalCV"
+	elementFormDefault="unqualified"
+	attributeFormDefault="unqualified">
+	
+	<xsd:element name="info_adicional" abstract="true" />
+
+	<!--  Es necesario definir el tipo del elemento "info_adicional" según
+		  convenga a tu modelado para construir un grupo de sustitución (no en este fichero). 
+		  Puede ser necesario especificar los valores de los indicadores maxOccurs y minOccurs.
+		  El elemento "info_adicional" debe ser abstracto. 
+
+		El grupo de substitución no puede pertenecer a este espacio de nombres
+(no sitúes el grupo de substitución en este fichero). -->
+	
+</xsd:schema>

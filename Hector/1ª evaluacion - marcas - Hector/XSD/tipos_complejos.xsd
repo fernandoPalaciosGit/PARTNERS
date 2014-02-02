@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://europass.com/cv.xml" xmlns:epcv="http://europass.com/cv.xml"
+	xmlns:au="http://www.w3c.org/autoria" xmlns:tweb="http://www.w3c.org/Tipos_web"
+	elementFormDefault="qualified">
+
+	<!-- IMPORTO PARA EXTENDER AUTOR DEL FICHERO AUDITORIA.xsd -->
+	<xsd:import namespace="http://www.w3c.org/autoria"
+		schemaLocation="../xsd_gelpi/auditoria.xsd" />
+
+	<!-- IMPORTO PARA VALIDAR URLS Y CORREOS -->
+	<xsd:import namespace="http://www.w3c.org/Tipos_web"
+		schemaLocation="../xsd_gelpi/Tipos_web_plantilla.xsd" />
+
+	<xsd:include schemaLocation="cv.xsd" />
+
+	<!-- Definición del elemento direccion y sus hijos -->
+	<xsd:complexType name="direction">
+		<xsd:sequence>
+			<xsd:element name="tipo" type="epcv:vias_permitidas"
+				minOccurs="0" />
+			<xsd:element name="nombre" type="xsd:string" minOccurs="0" />
+			<xsd:element name="numero" type="epcv:max1500" minOccurs="0" />
+			<xsd:element name="piso" type="xsd:byte" minOccurs="0" />
+			<xsd:element name="cp" type="epcv:codigo_postal"
+				minOccurs="0" />
+			<xsd:element name="localidad" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- Definición del elemento de contacto y sus hijos -->
+	<xsd:complexType name="datos_contacto">
+		<xsd:sequence>
+			<xsd:element name="c_telefono">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ct_tipo" type="epcv:telfs_permitidas" />
+						<xsd:element name="ct_prefijo" type="epcv:prefijos" />
+						<xsd:element name="ct_numero" type="epcv:telefonos" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Tipo Complejo para ampliar info de auditoria.XSD -->
+	<xsd:complexType name="info_ampliada">
+		<xsd:complexContent>
+			<xsd:extension base="au:autor">
+				<xsd:sequence>
+					<xsd:element name="direccion" type="epcv:direction" />
+					<xsd:element name="contacto" type="epcv:datos_contacto"
+						maxOccurs="unbounded" />
+					<xsd:element name="email" type="tweb:Temail" maxOccurs="unbounded" />
+					<xsd:element name="nacionalidad" type="xsd:string" />
+					<xsd:element name="nacimiento" type="epcv:date_gral"
+						maxOccurs="1" />
+					<xsd:element name="sexo" type="xsd:string" />
+					<xsd:element name="empleo_deseado" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<!-- Definición de las fechas, incluye un grupo de sustitución -->
+	<xsd:complexType name="date_gral">
+		<xsd:sequence>
+			<xsd:element ref="epcv:day_gral" minOccurs="0" />
+			<xsd:element ref="epcv:month_gral" minOccurs="0" />
+			<xsd:element ref="epcv:year_gral" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="info_experiencia">
+		<xsd:sequence>
+			<xsd:element name="desde" type="epcv:date_gral" />
+			<xsd:element name="hasta" type="epcv:date_gral" />
+			<xsd:element name="e_puesto" type="xsd:string" />
+			<xsd:element name="e_tarea" type="xsd:string" />
+			<xsd:element name="e_empresa" type="xsd:string" />
+			<xsd:element name="ee_direccion" type="epcv:direction" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="info_formacion">
+		<xsd:sequence>
+			<xsd:element ref="epcv:date" maxOccurs="unbounded" />
+			<xsd:element name="f_tipo" type="xsd:string" />
+			<xsd:element name="f_centro" type="epcv:info_centro" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="info_centro">
+		<xsd:sequence>
+			<xsd:element name="fc_nombre" type="xsd:string" />
+			<xsd:element name="fc_localidad" type="xsd:string" />
+			<xsd:element name="fc_tipo" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="info_capacidades">
+		<xsd:sequence>
+			<xsd:element name="c_materna" type="xsd:string" />
+			<xsd:element name="c_lenguas" type="epcv:info_lenguas" />
+			<xsd:element name="c_competencias" type="epcv:info_competencias" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="info_competencias">
+		<xsd:sequence>
+			<xsd:element name="cc_sociales" type="xsd:string" />
+			<xsd:element name="cc_organizativas" type="xsd:string"
+				maxOccurs="unbounded" />
+			<xsd:element name="cc_informaticas" type="xsd:string" />
+			<xsd:element name="c_conduce" type="epcv:niveles_permitidos" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="info_lenguas">
+		<xsd:sequence>
+			<xsd:element name="cl_lengua" type="xsd:string" />
+			<xsd:element name="cl_comprender">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="clc_auditiva" type="epcv:niveles_permitidos" />
+						<xsd:element name="clc_lectura" type="epcv:niveles_permitidos" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cl_hablar">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="clh_interaccion" type="epcv:niveles_permitidos" />
+						<xsd:element name="clh_expresion" type="epcv:niveles_permitidos" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cl_escribir" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+<!--  Para que no tenga error en la sección de info adicional. Falta hacer el abstract -->
+<xsd:complexType name="abstract">
+	<xsd:sequence>
+		<xsd:element name="nombre" type="xsd:string"/>
+		<xsd:element name="empresa" type="xsd:string"/>
+		<xsd:element name="direccion">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="tipo" type="xsd:string"/>
+					<xsd:element name="nombre" type="xsd:string"/>
+					<xsd:element name="numero" type="xsd:string"/>
+					<xsd:element name="localidad" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.w3c.org/Tipos_web" xmlns:tweb="http://www.w3c.org/Tipos_web"
+	elementFormDefault="qualified">
+
+	<!-- Es necesario que completes las definiciones de tipos de este fichero 
+		según las indicaciones y que importes este espacio de nombres a tu Schema 
+		para validar URL(s) y direcciones de correo electrónico. No es posible modificar 
+		los atributos del elemento schema de este fichero -->
+
+	<xsd:element name="datos_web" type="tweb:tipos"></xsd:element>
+
+	<xsd:complexType name="tipos">
+		<xsd:sequence>
+			<xsd:element name="URL" type="tweb:TURL" minOccurs="0" />
+			<xsd:element name="email" type="tweb:Temail" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="TURL">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="http://(.)*"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="Temail">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-z]*(@)[a-z]*(.)[a-z]*"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
